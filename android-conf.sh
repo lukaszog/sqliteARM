@@ -1,14 +1,5 @@
 #!/bin/sh
 
-# This script runs a configure script with the Android NDK toolchain
-# You may need to adjust the COMPILE_TARGET and ANDROID_API variables
-# depending on your requirements.
-#
-# Call this script in a directory with a valid configure script.
-# Example: PREFIX=${PWD}/bin android-configure.sh 
-
-# Set the ANDROID_NDK variable to the root
-# Example: export ANDROID_NDK=${HOME}/.local/android-ndk-r9b
 
 export ANDROID_NDK=/home/lukassz/android-ndk
 export PREFIX=/opt
@@ -55,7 +46,6 @@ export GCOV=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-gcov
 export GDB=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-gdb
 export GPROF=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-gprof
 
-# Don't mix up .pc files from your host and build target
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 
 export CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -FPIE -pie -I${SYSROOT}/usr/include -I${ANDROID_PREFIX}/include"
