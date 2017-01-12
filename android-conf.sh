@@ -9,7 +9,6 @@ if [ -z ${ANDROID_NDK} ]; then
   exit 1
 fi
 
-# This is just an empty directory where I want the built objects to be installed
 if [ -z ${PREFIX} ]; then
   echo "Please set PREFIX environment variable to the output directory"
   exit 1
@@ -25,7 +24,6 @@ export SYSROOT=${ANDROID_NDK}/platforms/android-${ANDROID_API}/arch-arm
 
 export TOOLCHAIN_PATH=${ANDROID_PREFIX}/bin
 
-# These are the toolchain utilities
 export CPP=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-cpp
 export AR=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-ar
 export AS=${TOOLCHAIN_PATH}/${COMPILE_TARGET}-as
